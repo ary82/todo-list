@@ -1,0 +1,29 @@
+// Main Font Stack
+html {
+  --font-stack: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+// Colors
+// Dark Theme
+html .dark {
+  --bg-clr: ;
+  --bg-lighter: ;
+  --text-clr: ;
+  --accent1-clr: ;
+  --accent2-clr: ;
+}
+// Light Theme
+html .light {
+  --bg-clr: ;
+  --bg-lighter: ;
+  --text-clr: ;
+  --accent1-clr: ;
+  --accent2-clr: ;
+}
+
+body {
+  font-family: var(--font-stack);
+  font-size: 1rem;
+  color: var(--text-clr);
+  background-color: var(--bg-clr);
+}
