@@ -5,6 +5,7 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.js",
+    theme: "./src/theme.js",
   },
   devtool: "eval-cheap-source-map",
   devServer: {
@@ -13,7 +14,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      title: "Document",
+      title: "To-do List",
     }),
   ],
   output: {

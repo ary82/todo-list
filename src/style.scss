@@ -5,25 +5,65 @@ html {
 }
 // Colors
 // Dark Theme
-html .dark {
-  --bg-clr: ;
-  --bg-lighter: ;
-  --text-clr: ;
-  --accent1-clr: ;
-  --accent2-clr: ;
+html {
+  --base: #191724;
+  --surface: #1f1d2e;
+  --overlay: #26233a;
+  --text: #e0def4;
+  --subtle: #908caa;
+  --rose: #ebbcba;
+  --pine: #31748f;
+  --iris: #c4a7e7;
+  --error: #eb6f92;
+  --warning: #f6c177;
+  --info: #9ccfd8;
 }
 // Light Theme
-html .light {
-  --bg-clr: ;
-  --bg-lighter: ;
-  --text-clr: ;
-  --accent1-clr: ;
-  --accent2-clr: ;
+.light {
+  --base: #faf4ed;
+  --surface: #fffaf3;
+  --overlay: #f2e9e1;
+  --text: #575279;
+  --subtle: #797593;
+  --rose: #d7827e;
+  --pine: #286983;
+  --iris: #907aa9;
+  --error: #b4637a;
+  --warning: #ea9d34;
+  --info: #56949f;
 }
 
 body {
   font-family: var(--font-stack);
   font-size: 1rem;
-  color: var(--text-clr);
-  background-color: var(--bg-clr);
+  color: var(--text);
+  background-color: var(--base);
+}
+#header {
+  margin: auto;
+  padding: .4rem 1.5rem;
+  color: var(--base);
+  text-align: center;
+  background-color: var(--rose);
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+  .moon > path {
+    transform: rotate(-45deg) translateY(5px) translateX(-10px);
+  }
+}
+#nav_bar {
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+  max-width: 30ch;
+  padding: 1.5rem;
+  h2 {
+    padding: 0.5rem;
+    margin-left: 1rem;
+  }
 }
