@@ -6,8 +6,75 @@
     <title>To-do list</title>
   </head>
   <body>
+    <!-- Popup for Task add -->
+    <dialog id="add_task">
+      <form method="dialog">
+        <h2>Add Task</h2>
+        <div>
+          <label for="title">Title: </label>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div>
+          <label for="project">Project: </label>
+          <select name="project">
+            <option value="default">default</option>
+          </select>
+        </div>
+        <div>
+          <label for="priority">Priority: </label>
+          <div>
+            <input type="radio" name="priority" value="" id="low" required />
+            <label for="low">Low</label>
+            <input type="radio" name="priority" value="" id="medium" />
+            <label for="medium">Medium</label>
+            <input type="radio" name="priority" value="" id="high" />
+            <label for="high">High</label>
+          </div>
+        </div>
+        <div>
+          <label for="date">Due Date: </label>
+          <input type="date" id="date" name="date" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </dialog>
+    <!-- Popup for Project add -->
+    <dialog id="add_project">
+      <form method="dialog">
+        <h2>Add Project</h2>
+        <div>
+          <label for="prj_title">Title: </label>
+          <input type="text" id="prj_title" name="prj_title" required />
+        </div>
+        <div>
+          <label for="prj_priority">Priority: </label>
+          <div>
+            <input type="radio" name="prj_priority" value="" id="prj_low" required />
+            <label for="prj_low">Low</label>
+            <input type="radio" name="prj_priority" value="" id="prj_medium" />
+            <label for="prj_medium">Medium</label>
+            <input type="radio" name="prj_priority" value="" id="prj_high" />
+            <label for="prj_high">High</label>
+          </div>
+        </div>
+        <div>
+          <label for="prj_date">Due Date: </label>
+          <input type="date" id="prj_date" name="prj_date" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </dialog>
+    <!-- Add Button hoverbox -->
+    <div id="add_hoverbox">
+      <h4>Task</h4>
+      <h4>Project</h4>
+    </div>
     <div id="header">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        id="add_button"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
         <path
           fill="currentColor"
           d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"

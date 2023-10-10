@@ -55,9 +55,113 @@ body {
     width: 3rem;
     height: 3rem;
     cursor: pointer;
+    transition:
+      transform 125ms ease-in-out,
+      rotate 125ms ease-in-out;
+    &:hover {
+      transform: scale(1.08);
+    }
   }
   .moon > path {
     transform: rotate(-45deg) translateY(5px) translateX(-10px);
+  }
+}
+.clicked {
+  rotate: 135deg;
+}
+#add_hoverbox {
+  background-color: var(--overlay);
+  color: var(--text);
+  position: fixed;
+  top: 3.5rem;
+  right: 1.8rem;
+  width: 10rem;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  margin-top: -7rem;
+  transition: transform 125ms ease-in-out;
+  h4 {
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 0.8rem;
+  }
+  &.hoverbox_visible {
+    transform: translateY(7rem);
+  }
+}
+dialog {
+  border-radius: 1rem;
+  color: var(--text);
+  border: 2px solid var(--rose);
+  background-color: var(--overlay);
+  min-width: 30rem;
+  form {
+    display: flex;
+    font-size: 1.1rem;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+    > div {
+      display: flex;
+      align-items: center;
+      > * {
+        min-width: 50%;
+      }
+      input,
+      select {
+        background-color: var(--surface);
+        border: 2px solid var(--base);
+        color: var(--text);
+      }
+      // Priority options
+      > div {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        display: none;
+        & + label {
+          cursor: pointer;
+          background-color: var(--surface);
+          padding: 0.4rem 0.5rem;
+          border-radius: 8px;
+        }
+        &:checked + label {
+          color: var(--base);
+          &[for="low"],
+          &[for="prj_low"] {
+            background-color: var(--info);
+          }
+          &[for="medium"],
+          &[for="prj_medium"] {
+            background-color: var(--warning);
+          }
+          &[for="high"],
+          &[for="prj_high"] {
+            background-color: var(--error);
+          }
+        }
+      }
+    }
+    h2 {
+      align-self: center;
+    }
+    button {
+      align-self: center;
+      width: 50%;
+      background-color: var(--rose);
+      color: var(--base);
+      border-radius: 10px;
+      padding: 0.5rem;
+      transition: transform 125ms ease-in-out;
+      border: 0;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
 }
 #content {
@@ -80,7 +184,7 @@ body {
   h3 {
     padding-left: 1.5rem;
   }
-  > * {
+  * {
     margin: 0;
     padding: 0.6rem;
   }
