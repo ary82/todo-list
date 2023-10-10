@@ -16,18 +16,19 @@
         </div>
         <div>
           <label for="project">Project: </label>
-          <select name="project">
+          <select name="project" id="project">
             <option value="default">default</option>
+            <option value="fir">fir</option>
           </select>
         </div>
         <div>
           <label for="priority">Priority: </label>
           <div>
-            <input type="radio" name="priority" value="" id="low" required />
+            <input type="radio" name="priority" value="low" id="low" required />
             <label for="low">Low</label>
-            <input type="radio" name="priority" value="" id="medium" />
+            <input type="radio" name="priority" value="medium" id="medium" />
             <label for="medium">Medium</label>
-            <input type="radio" name="priority" value="" id="high" />
+            <input type="radio" name="priority" value="high" id="high" />
             <label for="high">High</label>
           </div>
         </div>
@@ -49,11 +50,27 @@
         <div>
           <label for="prj_priority">Priority: </label>
           <div>
-            <input type="radio" name="prj_priority" value="" id="prj_low" required />
+            <input
+              type="radio"
+              name="prj_priority"
+              value="low"
+              id="prj_low"
+              required
+            />
             <label for="prj_low">Low</label>
-            <input type="radio" name="prj_priority" value="" id="prj_medium" />
+            <input
+              type="radio"
+              name="prj_priority"
+              value="medium"
+              id="prj_medium"
+            />
             <label for="prj_medium">Medium</label>
-            <input type="radio" name="prj_priority" value="" id="prj_high" />
+            <input
+              type="radio"
+              name="prj_priority"
+              value="high"
+              id="prj_high"
+            />
             <label for="prj_high">High</label>
           </div>
         </div>
