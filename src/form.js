@@ -1,3 +1,33 @@
+import { createProject, createTask } from "./task.js";
+import { projectList, taskList } from "./task.js";
+const taskForm = document.querySelector("#add_task > form");
+const projectForm = document.querySelector("#add_project > form");
 document.querySelectorAll("input[type='date']").forEach((element) =>
   element.valueAsDate = new Date()
 );
+
+taskForm.addEventListener("submit", () => {
+  let taskName = document.getElementById("title").value;
+  let projectName = document.getElementById("project").value;
+  let priority;
+  document.getElementsByName("priority").forEach((e) => {
+    if (e.checked) priority = e.value;
+  });
+  let date = document.getElementById("date").value;
+  let newTask = createTask(taskName, projectName, priority, date);
+  taskList.push(newTask);
+  console.log(taskList);
+});
+
+projectForm.addEventListener("submit", () => {
+  let projectName = document.getElementById("prj_title").value;
+  let priority;
+  document.getElementsByName("prj_priority").forEach((e) => {
+    if (e.checked) priority = e.value;
+  });
+  console.log(priority);
+  let date = document.getElementById("prj_date").value;
+  let newProject = createProject(projectName, priority, date);
+  projectList.push(newProject);
+  console.log(projectList);
+});

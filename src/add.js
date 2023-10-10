@@ -3,9 +3,6 @@ const addHoverbox = document.getElementById("add_hoverbox");
 const addTaskorProject = document.querySelectorAll("#add_hoverbox > h4");
 const addTask = document.getElementById("add_task");
 const addProject = document.getElementById("add_project");
-document.querySelectorAll("input[type='date']").forEach((element) =>
-  element.valueAsDate = new Date()
-);
 
 addButton.addEventListener("click", () => {
   addButton.classList.toggle("clicked");
