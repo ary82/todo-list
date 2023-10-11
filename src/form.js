@@ -28,6 +28,10 @@ projectForm.addEventListener("submit", () => {
   console.log(priority);
   let date = document.getElementById("prj_date").value;
   let newProject = createProject(projectName, priority, date);
+  const newOption = document.createElement("option");
+  newOption.value = newProject.name;
+  newOption.innerText = newProject.name;
+  document.getElementById("project").appendChild(newOption);
   projectList.push(newProject);
   console.log(projectList);
 });
