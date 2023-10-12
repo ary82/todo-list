@@ -1,5 +1,6 @@
 import { createProject, createTask } from "./task.js";
 import { projectList, taskList } from "./task.js";
+import displayHandler from "./display.js";
 const taskForm = document.querySelector("#add_task > form");
 const projectForm = document.querySelector("#add_project > form");
 document.querySelectorAll("input[type='date']").forEach((element) =>
@@ -17,6 +18,7 @@ taskForm.addEventListener("submit", () => {
   let newTask = createTask(taskName, projectName, priority, date);
   taskList.push(newTask);
   console.log(taskList);
+  displayHandler();
 });
 
 projectForm.addEventListener("submit", () => {
