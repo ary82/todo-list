@@ -5,7 +5,6 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.js",
-    theme: "./src/theme.js",
   },
   devtool: "eval-cheap-source-map",
   devServer: {
