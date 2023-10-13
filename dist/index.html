@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do list</title>
-  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script><script defer src="theme.bundle.js"></script></head>
+  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
   <body>
     <!-- Popup for Task add -->
     <dialog id="add_task">
@@ -18,7 +18,6 @@
           <label for="project">Project: </label>
           <select name="project" id="project">
             <option value="default">default</option>
-            <option value="fir">fir</option>
           </select>
         </div>
         <div>
@@ -34,7 +33,7 @@
         </div>
         <div>
           <label for="date">Due Date: </label>
-          <input type="date" id="date" name="date" />
+          <input type="date" id="date" name="date" required />
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -50,17 +49,33 @@
         <div>
           <label for="prj_priority">Priority: </label>
           <div>
-            <input type="radio" name="prj_priority" value="" id="prj_low" required />
+            <input
+              type="radio"
+              name="prj_priority"
+              value="low"
+              id="prj_low"
+              required
+            />
             <label for="prj_low">Low</label>
-            <input type="radio" name="prj_priority" value="" id="prj_medium" />
+            <input
+              type="radio"
+              name="prj_priority"
+              value="medium"
+              id="prj_medium"
+            />
             <label for="prj_medium">Medium</label>
-            <input type="radio" name="prj_priority" value="" id="prj_high" />
+            <input
+              type="radio"
+              name="prj_priority"
+              value="high"
+              id="prj_high"
+            />
             <label for="prj_high">High</label>
           </div>
         </div>
         <div>
           <label for="prj_date">Due Date: </label>
-          <input type="date" id="prj_date" name="prj_date" />
+          <input type="date" id="prj_date" name="prj_date" required />
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -97,15 +112,15 @@
     <div id="content">
       <div id="nav_bar">
         <h2>Tasks:</h2>
-        <h3>Today</h3>
-        <h3>Next week</h3>
-        <h3>Upcoming</h3>
-        <h3>Missed</h3>
-        <h3>Priority</h3>
+        <h3 id="task_today">Today</h3>
+        <h3 id="task_nextweek">This week</h3>
+        <h3 id="task_upcoming" class="active">All</h3>
+        <h3 id="task_missed">Missed</h3>
+        <h3 id="task_priority">Priority</h3>
         <h2>Projects:</h2>
-        <h3>Upcoming</h3>
-        <h3>Missed</h3>
-        <h3>Priority</h3>
+        <h3 id="project_upcoming">All</h3>
+        <h3 id="project_missed">Missed</h3>
+        <h3 id="project_priority">Priority</h3>
       </div>
       <div id="right_side"></div>
     </div>
