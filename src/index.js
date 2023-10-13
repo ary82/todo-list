@@ -4,3 +4,5 @@ import "./theme.js";
 import "./add.js";
 import "./form.js";
 import "./mode.js"
+import displayHandler from "./display";
+displayHandler()
