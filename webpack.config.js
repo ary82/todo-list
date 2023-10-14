@@ -3,9 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: {
-    index: "./src/index.js",
-  },
+  entry: "./src/index.js",
   devtool: "eval-cheap-source-map",
   devServer: {
     static: "./dist",
@@ -45,14 +43,6 @@ module.exports = {
           // Translates CSS into CommonJS
           "css-loader",
         ],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
       },
     ],
   },
