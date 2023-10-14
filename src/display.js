@@ -38,7 +38,7 @@ export default function displayHandler() {
     case "task_missed":
       newArr = [];
       taskList.forEach((e) => {
-        if (isPast(parseISO(e.date))) {
+        if (isPast(parseISO(e.date)) && !isToday(parseISO(e.date))) {
           newArr.push(e);
         }
       });
@@ -65,7 +65,7 @@ export default function displayHandler() {
     case "project_missed":
       newArr = [];
       projectList.forEach((e) => {
-        if (isPast(parseISO(e.date))) {
+        if (isPast(parseISO(e.date)) && !isToday(parseISO(e.date))) {
           newArr.push(e);
         }
       });
@@ -75,7 +75,7 @@ export default function displayHandler() {
       high = [];
       medium = [];
       low = [];
-      taskList.forEach((e) => {
+      projectList.forEach((e) => {
         if (e.priority === "high") {
           high.push(e);
         } else if (e.priority === "medium") {
@@ -84,7 +84,7 @@ export default function displayHandler() {
           low.push(e);
         }
       });
-      handleTask(high.concat(medium, low));
+      handleProject(high.concat(medium, low));
       break;
 
     default:
@@ -123,13 +123,15 @@ function handleProject(arr) {
     newDOM.appendChild(newTitle);
     newDOM.appendChild(newPriority);
     newDOM.appendChild(newDate);
+    const newDiv = document.createElement("div");
     taskList.forEach((e) => {
       if (e.project === element.name) {
         const newTitle = document.createElement("h5");
         newTitle.innerText = e.name;
-        newDOM.appendChild(newTitle);
+        newDiv.appendChild(newTitle);
       }
     });
+    newDOM.appendChild(newDiv);
     document.getElementById("right_side").appendChild(newDOM);
   });
 }

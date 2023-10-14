@@ -17,7 +17,7 @@ taskForm.addEventListener("submit", () => {
   let date = document.getElementById("date").value;
   let newTask = createTask(taskName, projectName, priority, date);
   taskList.push(newTask);
-  localStorage.setItem("taskL", JSON.stringify(taskList))
+  localStorage.setItem("taskL", JSON.stringify(taskList));
   console.log(taskList);
   displayHandler();
 });
@@ -36,6 +36,6 @@ projectForm.addEventListener("submit", () => {
   newOption.innerText = newProject.name;
   document.getElementById("project").appendChild(newOption);
   projectList.push(newProject);
-  localStorage.setItem("projectL", JSON.stringify(projectList))
+  localStorage.setItem("projectL", JSON.stringify(projectList));
   console.log(projectList);
 });
