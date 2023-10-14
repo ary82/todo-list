@@ -17,3 +17,10 @@ export function createTask(name, project, priority, date) {
 }
 export let taskList = [];
 export let projectList = [];
+
+if (localStorage.getItem("taskL")) {
+  taskList = JSON.parse(localStorage.getItem("taskL"));
+}
+if (localStorage.getItem("projectL")) {
+  projectList = JSON.parse(localStorage.getItem("projectL"));
+}
