@@ -1,18 +1,13 @@
-export function createProject(name, priority, date) {
-  let done = false;
-  const toggleDone = () => done = !done;
-  const getDone = () => done;
+export function createProject(name, priority, date, done) {
   return {
     name,
     priority,
     date,
-    getDone,
-    toggleDone,
+    done,
   };
 }
-
-export function createTask(name, project, priority, date) {
-  const task = createProject(name, priority, date);
+export function createTask(name, project, priority, date, done) {
+  const task = createProject(name, priority, date, done);
   return Object.assign({}, task, { project });
 }
 export let taskList = [];

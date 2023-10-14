@@ -2,6 +2,7 @@ import { projectList, taskList } from "./task.js";
 import { currentMode } from "./mode.js";
 import compareAsc from "date-fns/compareAsc";
 import { isPast, isThisWeek, isToday, parseISO } from "date-fns";
+import { createProject, createTask } from "./task.js";
 const content = document.getElementById("right_side");
 export default function displayHandler() {
   let newArr = [];
@@ -17,10 +18,8 @@ export default function displayHandler() {
       break;
     case "task_today":
       newArr = [];
-      console.log(new Date());
       taskList.forEach((e) => {
         if (isToday(parseISO(e.date))) {
-          console.log("wadoc");
           newArr.push(e);
         }
       });
@@ -107,8 +106,17 @@ function handleTask(arr) {
     newDOM.appendChild(newProject);
     newDOM.appendChild(newPriority);
     newDOM.appendChild(newDate);
+    if (element.done) {
+      newDOM.classList.toggle("done");
+    }
+    newDOM.addEventListener("click", () => {
+      newDOM.classList.toggle("done");
+      element.done = !element.done;
+      localStorage.setItem("taskL", JSON.stringify(taskList));
+      console.log(element);
+    });
     document.getElementById("right_side").appendChild(newDOM);
-    document.getElementById("right_side").classList.remove("project");
+    document.getElementById("right_side").className = "task";
   });
 }
 
@@ -135,7 +143,16 @@ function handleProject(arr) {
       }
     });
     if (bool) newDOM.appendChild(newDiv);
+    if (element.done) {
+      newDOM.classList.toggle("done");
+    }
+    newDOM.addEventListener("click", () => {
+      newDOM.classList.toggle("done");
+      element.done = !element.done;
+      localStorage.setItem("projectL", JSON.stringify(projectList));
+      console.log(element);
+    });
     document.getElementById("right_side").appendChild(newDOM);
-    document.getElementById("right_side").classList.add("project");
+    document.getElementById("right_side").className = "project";
   });
 }

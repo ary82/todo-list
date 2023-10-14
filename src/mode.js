@@ -5,7 +5,6 @@ modeButtons.forEach((element) => {
   element.addEventListener("click", () => {
     clearClass();
     element.classList.toggle("active");
-    console.log(element.id);
     currentMode = element.id;
     displayHandler();
   });

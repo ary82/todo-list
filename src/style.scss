@@ -41,6 +41,7 @@ body {
 }
 #header {
   margin: auto;
+  z-index: 2;
   position: sticky;
   height: 3.5rem;
   box-shadow: 0 0 5px var(--iris);
@@ -71,6 +72,7 @@ body {
   rotate: 135deg;
 }
 #add_hoverbox {
+  z-index: 1;
   background-color: var(--overlay);
   color: var(--text);
   position: fixed;
@@ -198,8 +200,8 @@ dialog {
     }
   }
   * {
-    margin: 0;
-    padding: 0.6rem;
+    margin: 0.1rem;
+    padding: 0.5rem;
   }
   .active {
     background-color: var(--rose);
@@ -216,13 +218,15 @@ dialog {
   gap: 1rem;
   > div {
     position: relative;
+    cursor: pointer;
     box-shadow: 0 0 3px var(--pine);
     background-color: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 2.5rem;
+    align-items: center;
     border-radius: 0.5rem;
-    z-index: -1;
+    padding: 0.5rem;
+    gap: 1.5rem;
     &::before {
       content: "";
       position: absolute;
@@ -243,7 +247,6 @@ dialog {
     flex-direction: column;
     padding: 1rem;
     justify-content: flex-start;
-    gap: 1.5rem;
     h3,
     h4,
     h5 {
@@ -257,4 +260,12 @@ dialog {
       gap: 0.15rem 1rem;
     }
   }
+}
+#right_side.task > div > * {
+  width: 25%;
+  text-align: center;
+}
+.done {
+  opacity: 50%;
+  color: var(--subtle);
 }

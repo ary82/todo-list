@@ -15,10 +15,9 @@ taskForm.addEventListener("submit", () => {
     if (e.checked) priority = e.value;
   });
   let date = document.getElementById("date").value;
-  let newTask = createTask(taskName, projectName, priority, date);
+  let newTask = createTask(taskName, projectName, priority, date, false);
   taskList.push(newTask);
   localStorage.setItem("taskL", JSON.stringify(taskList));
-  console.log(taskList);
   displayHandler();
 });
 
@@ -28,15 +27,13 @@ projectForm.addEventListener("submit", () => {
   document.getElementsByName("prj_priority").forEach((e) => {
     if (e.checked) priority = e.value;
   });
-  console.log(priority);
   let date = document.getElementById("prj_date").value;
-  let newProject = createProject(projectName, priority, date);
+  let newProject = createProject(projectName, priority, date, false);
   const newOption = document.createElement("option");
   newOption.value = newProject.name;
   newOption.innerText = newProject.name;
   document.getElementById("project").appendChild(newOption);
   projectList.push(newProject);
   localStorage.setItem("projectL", JSON.stringify(projectList));
-  console.log(projectList);
   displayHandler();
 });
