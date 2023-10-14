@@ -6,7 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunkwebpack_testing"] = self["webpackChunkwebpack_testing"] || []).push([["index"],{
+(self["webpackChunkwebpack_testing"] = self["webpackChunkwebpack_testing"] || []).push([["main"],{
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style.scss":
 /*!*****************************************************************************************************!*\
