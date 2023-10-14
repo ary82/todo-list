@@ -38,4 +38,5 @@ projectForm.addEventListener("submit", () => {
   projectList.push(newProject);
   localStorage.setItem("projectL", JSON.stringify(projectList));
   console.log(projectList);
+  displayHandler();
 });

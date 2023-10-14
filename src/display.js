@@ -108,6 +108,7 @@ function handleTask(arr) {
     newDOM.appendChild(newPriority);
     newDOM.appendChild(newDate);
     document.getElementById("right_side").appendChild(newDOM);
+    document.getElementById("right_side").classList.remove("project");
   });
 }
 
@@ -124,14 +125,17 @@ function handleProject(arr) {
     newDOM.appendChild(newPriority);
     newDOM.appendChild(newDate);
     const newDiv = document.createElement("div");
+    let bool = false;
     taskList.forEach((e) => {
       if (e.project === element.name) {
         const newTitle = document.createElement("h5");
         newTitle.innerText = e.name;
         newDiv.appendChild(newTitle);
+        bool = true;
       }
     });
-    newDOM.appendChild(newDiv);
+    if (bool) newDOM.appendChild(newDiv);
     document.getElementById("right_side").appendChild(newDOM);
+    document.getElementById("right_side").classList.add("project");
   });
 }
